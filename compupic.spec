@@ -22,7 +22,8 @@ features for editing, sharing, and using your digital content
 
 %description -l pl
 Najszybsze i naj³atwiejsze w u¿yciu narzêdzie do przegl±dania i podgl±du
-obrazków. 
+obrazków. CompuPic daje nieporównywaln± wydajno¶æ po³±czon± z pe³n± gam±
+mo¿liwo¶ci edycji, udostêpniania oraz u¿ywania cyfrowych zasobów.
 
 %prep
 %setup -q -n compupic-5.1.1063-i386-Linux
@@ -30,7 +31,6 @@ obrazków.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-# create directories if necessary
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1,%{_datadir}/compupic,%{_pixmapsdir},%{_desktopdir}}
 
 tar xf compupic.tar -C $RPM_BUILD_ROOT%{_datadir}/compupic
