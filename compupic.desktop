@@ -6,4 +6,5 @@ Type=Application
 Exec=compupic
 GenericName=Picture browser
 GenericName[pl]=Przeglądarka obrazów
+Categories=Graphics;Viewer;
 # vi: encoding=utf-8
