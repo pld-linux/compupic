@@ -2,7 +2,7 @@ Summary:	A commercial picture browsing tool.
 Summary(pl):	Komercyjna aplikacja do przegl±dania obrazków
 Name:		compupic
 Version:	5.1.1063
-Release:	1
+Release:	2
 ##License:	Proprietary (Free for non-business use. Busines use requires registration.)
 Copyright:	Photodex Corporation
 Group:		X11/Applications/Multimedia
@@ -38,6 +38,8 @@ mv $RPM_BUILD_ROOT%{_datadir}/compupic/*.xpm	$RPM_BUILD_ROOT%{_pixmapsdir}/
 mv $RPM_BUILD_ROOT%{_datadir}/compupic/LICENSE ./
 mv $RPM_BUILD_ROOT%{_datadir}/compupic/README ./
 cd $RPM_BUILD_ROOT%{_datadir}/compupic
+perl -pi -e 's/libn/FOOB/g' compupic
+perl -pi -e 's/nss/FOO/g' compupic
 ln compupic ../../bin/compupic
 cd -
 
@@ -45,11 +47,11 @@ cat > $RPM_BUILD_ROOT%{_desktopdir}/compupic.desktop <<_EOF_
 [Desktop Entry]
 Encoding=UTF-8
 Name=Compupic
-Name[pl]=
+Name[pl]=Compupic
 Type=Application
 Exec=compupic
 GenericName=Picture browser
-GenericName[pl]=PrzeglÄ…darka obrazÃ³w
+GenericName[pl]=Przegl±darka obrazów
 _EOF_
 
 iconv -f iso8859-2 -t utf8 $RPM_BUILD_ROOT%{_desktopdir}/compupic.desktop >> $RPM_BUILD_ROOT%{_desktopdir}/compupic.desktop.1
@@ -65,7 +67,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc %{_datadir}/compupic/english
 %doc %{_datadir}/compupic/web
 %{_mandir}/man1/compupic*
-%{_datadir}/compupic/compupic
+%attr(755,root,root) %{_datadir}/compupic/compupic
 %{_datadir}/compupic/cpicoeme.bmp
 %{_datadir}/compupic/defscr
 %{_datadir}/compupic/docscr
