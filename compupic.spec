@@ -7,7 +7,7 @@ License:	Proprietary (Free for non-business use. Busines use requires registrati
 Vendor:		Photodex Corporation
 Group:		X11/Applications/Multimedia
 Source0:	http://www.photodex.com/files.system/linux/%{name}-%{version}-i386-Linux.tar.gz 
-# NoSource0-md5: 7c4c1f042cfef63055de960933d7a19c
+# Source0-md5:	7c4c1f042cfef63055de960933d7a19c
 NoSource:	0
 Source1:	%{name}.desktop
 URL:		http://www.photodex.com/products/compupic/index.html
