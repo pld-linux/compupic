@@ -18,7 +18,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 The fastest, easiest to use software for browsing and viewing pictures. 
 CompuPic gives you unmatched performance paired with a full set of 
-features for editing, sharing, and using your digital content
+features for editing, sharing, and using your digital content.
 
 %description -l pl
 Najszybsze i naj³atwiejsze w u¿yciu narzêdzie do przegl±dania i podgl±du
@@ -44,7 +44,7 @@ perl -pi -e 's/nss/FOO/g' compupic
 ln compupic ../../bin/compupic
 cd -
 
-install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}/compupic.desktop
+install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
