@@ -4,7 +4,7 @@ Name:		compupic
 Version:	5.1.1063
 Release:	2
 License:	Proprietary (Free for non-business use. Busines use requires registration.)
-Copyright:	Photodex Corporation
+Vendor:		Photodex Corporation
 Group:		X11/Applications/Multimedia
 Source0:	http://www.photodex.com/files.system/linux/%{name}-%{version}-i386-Linux.tar.gz 
 # NoSource0-md5: 7c4c1f042cfef63055de960933d7a19c
