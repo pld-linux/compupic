@@ -49,7 +49,7 @@ Name[pl]=
 Type=Application
 Exec=compupic
 GenericName=Picture browser
-GenericName[pl]=Przegl±darka obrazów
+GenericName[pl]=PrzeglÄ…darka obrazÃ³w
 _EOF_
 
 iconv -f iso8859-2 -t utf8 $RPM_BUILD_ROOT%{_desktopdir}/compupic.desktop >> $RPM_BUILD_ROOT%{_desktopdir}/compupic.desktop.1
