@@ -3,12 +3,13 @@ Summary(pl):	Komercyjna aplikacja do przegl±dania obrazków
 Name:		compupic
 Version:	5.1.1063
 Release:	2
-##License:	Proprietary (Free for non-business use. Busines use requires registration.)
+License:	Proprietary (Free for non-business use. Busines use requires registration.)
 Copyright:	Photodex Corporation
 Group:		X11/Applications/Multimedia
 Source0:	http://www.photodex.com/files.system/linux/%{name}-%{version}-i386-Linux.tar.gz 
 # NoSource0-md5: 7c4c1f042cfef63055de960933d7a19c
 NoSource:	0
+Source1:	%{name}-desktop
 URL:		http://www.photodex.com/products/compupic/index.html
 BuildRequires:	coreutils
 ExclusiveArch:	%{ix86}
@@ -43,19 +44,7 @@ perl -pi -e 's/nss/FOO/g' compupic
 ln compupic ../../bin/compupic
 cd -
 
-cat > $RPM_BUILD_ROOT%{_desktopdir}/compupic.desktop <<_EOF_
-[Desktop Entry]
-Encoding=UTF-8
-Name=Compupic
-Name[pl]=Compupic
-Type=Application
-Exec=compupic
-GenericName=Picture browser
-GenericName[pl]=Przegl±darka obrazów
-_EOF_
-
-iconv -f iso8859-2 -t utf8 $RPM_BUILD_ROOT%{_desktopdir}/compupic.desktop >> $RPM_BUILD_ROOT%{_desktopdir}/compupic.desktop.1
-mv $RPM_BUILD_ROOT%{_desktopdir}/compupic.desktop{.1,}
+install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}/compupic.desktop
 
 %clean
 rm -rf $RPM_BUILD_ROOT
