@@ -1,12 +1,11 @@
-Summary:	A commercial picture browsing tool.
+Summary:	A commercial picture browsing tool
 Summary(pl):	Komercyjna aplikacja do przegl±dania obrazków
 Name:		compupic
 Version:	5.1.1063
 Release:	2
 License:	Proprietary (Free for non-business use. Busines use requires registration.)
-Vendor:		Photodex Corporation
 Group:		X11/Applications/Multimedia
-Source0:	http://www.photodex.com/files.system/linux/%{name}-%{version}-i386-Linux.tar.gz 
+Source0:	http://www.photodex.com/files.system/linux/%{name}-%{version}-i386-Linux.tar.gz
 # Source0-md5:	7c4c1f042cfef63055de960933d7a19c
 Source1:	%{name}.desktop
 URL:		http://www.photodex.com/products/compupic/index.html
@@ -26,7 +25,7 @@ pe³n± gam± mo¿liwo¶ci edycji, udostêpniania oraz u¿ywania cyfrowych
 zasobów.
 
 %prep
-%setup -q -n compupic-5.1.1063-i386-Linux
+%setup -q -n %{name}-%{version}-i386-Linux
 > install.sh
 
 %install
