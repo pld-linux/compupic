@@ -2,14 +2,14 @@ Summary:	A commercial picture browsing tool
 Summary(pl):	Komercyjna aplikacja do przegl±dania obrazków
 Name:		compupic
 Version:	5.1.1063
-Release:	2
+Release:	3
 License:	Proprietary (Free for non-business use. Busines use requires registration.)
 Group:		X11/Applications/Multimedia
 Source0:	http://www.photodex.com/files.system/linux/%{name}-%{version}-i386-Linux.tar.gz
 # Source0-md5:	7c4c1f042cfef63055de960933d7a19c
 Source1:	%{name}.desktop
 URL:		http://www.photodex.com/products/compupic/index.html
-BuildRequires:	perl-base
+BuildRequires:	sed >= 4.0
 ExclusiveArch:	%{ix86}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -27,34 +27,33 @@ zasobów.
 %prep
 %setup -q -n %{name}-%{version}-i386-Linux
 > install.sh
+mkdir -p compupic
+tar xf compupic.tar -C compupic
+mv compupic/compupic.1 .
+mv compupic/LICENSE .
+mv compupic/README .
+mv compupic/*.xpm .
+%{__sed} -i -e 's/libn/FOOB/g;s/nss/FOO/g' compupic/compupic
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1,%{_datadir}/compupic,%{_pixmapsdir},%{_desktopdir}}
 
-tar xf compupic.tar -C $RPM_BUILD_ROOT%{_datadir}/compupic
-mv -f $RPM_BUILD_ROOT%{_datadir}/compupic/compupic.1 $RPM_BUILD_ROOT%{_mandir}/man1
-mv $RPM_BUILD_ROOT%{_datadir}/compupic/*.xpm $RPM_BUILD_ROOT%{_pixmapsdir}
-mv $RPM_BUILD_ROOT%{_datadir}/compupic/LICENSE .
-mv $RPM_BUILD_ROOT%{_datadir}/compupic/README .
-cd $RPM_BUILD_ROOT%{_datadir}/compupic
-%{__perl} -pi -e 's/libn/FOOB/g' compupic
-%{__perl} -pi -e 's/nss/FOO/g' compupic
-cd -
-
-install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
+cp -a compupic/* $RPM_BUILD_ROOT%{_datadir}/compupic
+cp -a compupic.1 $RPM_BUILD_ROOT%{_mandir}/man1
+cp -a *.xpm $RPM_BUILD_ROOT%{_pixmapsdir}
+cp -a %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
+ln -s %{_datadir}/compupic/compupic $RPM_BUILD_ROOT%{_bindir}/compupic
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post
-ln -s %{_datadir}/compupic/compupic /usr/bin/compupic
-
 %files
 %defattr(644,root,root,755)
 %doc README LICENSE
+%attr(755,root,root) %{_bindir}/compupic
 %dir %{_datadir}/compupic
-# XXX: it can't be in %{_datadir}
+# XXX: x86 binary can't be in %{_datadir}
 %attr(755,root,root) %{_datadir}/compupic/compupic
 %doc %{_datadir}/compupic/english
 %doc %{_datadir}/compupic/web
