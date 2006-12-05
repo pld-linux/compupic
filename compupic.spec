@@ -40,7 +40,6 @@ mv $RPM_BUILD_ROOT%{_datadir}/compupic/README .
 cd $RPM_BUILD_ROOT%{_datadir}/compupic
 %{__perl} -pi -e 's/libn/FOOB/g' compupic
 %{__perl} -pi -e 's/nss/FOO/g' compupic
-ln compupic ../../bin/compupic
 cd -
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
@@ -48,10 +47,12 @@ install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post
+ln -s %{_datadir}/compupic/compupic /usr/bin/compupic
+
 %files
 %defattr(644,root,root,755)
 %doc README LICENSE
-%attr(755,root,root) %{_bindir}/compupic
 %dir %{_datadir}/compupic
 # XXX: it can't be in %{_datadir}
 %attr(755,root,root) %{_datadir}/compupic/compupic
