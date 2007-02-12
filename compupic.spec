@@ -1,5 +1,5 @@
 Summary:	A commercial picture browsing tool
-Summary(pl):	Komercyjna aplikacja do przegl±dania obrazków
+Summary(pl.UTF-8):   Komercyjna aplikacja do przeglÄ…dania obrazkÃ³w
 Name:		compupic
 Version:	5.1.1063
 Release:	3
@@ -18,11 +18,11 @@ The fastest, easiest to use software for browsing and viewing
 pictures. CompuPic gives you unmatched performance paired with a full
 set of features for editing, sharing, and using your digital content.
 
-%description -l pl
-Najszybsze i naj³atwiejsze w u¿yciu narzêdzie do przegl±dania i
-podgl±du obrazków. CompuPic daje nieporównywaln± wydajno¶æ po³±czon± z
-pe³n± gam± mo¿liwo¶ci edycji, udostêpniania oraz u¿ywania cyfrowych
-zasobów.
+%description -l pl.UTF-8
+Najszybsze i najÅ‚atwiejsze w uÅ¼yciu narzÄ™dzie do przeglÄ…dania i
+podglÄ…du obrazkÃ³w. CompuPic daje nieporÃ³wnywalnÄ… wydajnoÅ›Ä‡ poÅ‚Ä…czonÄ… z
+peÅ‚nÄ… gamÄ… moÅ¼liwoÅ›ci edycji, udostÄ™pniania oraz uÅ¼ywania cyfrowych
+zasobÃ³w.
 
 %prep
 %setup -q -n %{name}-%{version}-i386-Linux
