@@ -1,5 +1,5 @@
 Summary:	A commercial picture browsing tool
-Summary(pl.UTF-8):   Komercyjna aplikacja do przeglądania obrazków
+Summary(pl.UTF-8):	Komercyjna aplikacja do przeglądania obrazków
 Name:		compupic
 Version:	5.1.1063
 Release:	3
